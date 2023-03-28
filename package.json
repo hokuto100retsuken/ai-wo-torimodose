@@ -1,0 +1,18 @@
+{
+  "name": "@hkt100rtkn/ai-wo-torimodose",
+  "version": "0.1.0",
+  "description": "ai wo torimodose",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hkt100rtkn <hokuto100retsuken@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "openai": "^3.2.1",
+    "typescript": "^5.0.2"
+  }
+}
