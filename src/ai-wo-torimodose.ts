@@ -55,7 +55,30 @@ export class AiWoTorimodose {
     ];
   }
 
+
   private supportMessages(message: string): ChatCompletionRequestMessage[] {
-    return [];
+    return [
+      {
+        role: "system",
+        content:
+        "あなたはカスタマーサポートの担当者です。キーワードを用いて、お問い合わせに回答してください。",
+      },
+      {
+        role: "user",
+        content:
+        "電源ケーブルが接続されていることを確認してください。パソコンの電源を入れ、パソコンの電源ランプが点灯するかどうかを確認してください。画面に何か表示されるか確認してください。",
+      },
+      {
+        role: "assistant",
+        content:
+        "お問い合わせありがとうございます。はじめに電源ケーブルが接続されていることを確認してください。次にパソコンの電源を入れ、パソコンの電源ランプが点灯するかどうかを確認してください。電源ランプが点灯したら、画面に何か表示されるか確認してください。",
+      },
+      {
+        role: "user",
+        content:
+        "以下の条件から、お問合せの文章を考えてください。丁寧な言葉を使うように表現を修正してください。" +
+        message,
+      },
+    ];
   }
 }
