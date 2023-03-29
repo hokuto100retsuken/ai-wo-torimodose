@@ -29,33 +29,29 @@ export class AiWoTorimodose {
     });
   }
 
-  private customerMessages(message: string): ChatCompletionRequestMessage[] {
+  private supportMessages(message: string): ChatCompletionRequestMessage[] {
     return [
       {
         role: "system",
         content:
-          "あなたはお問合せの文章を考えています。キーワードから文章を作成してくれます。",
+        "あなたはカスタマーサポートの担当者です。キーワードを用いて、お問い合わせに回答してください。",
       },
       {
         role: "user",
         content:
-          "以下の条件から、お問合せの文章を考えてください。パソコンが動かなくなった、昨日までは動いた、今日の14時から動かなくなった、電源ボタンを長押ししても反応がない",
+        "電源ケーブルが接続されていることを確認してください。パソコンの電源を入れ、パソコンの電源ランプが点灯するかどうかを確認してください。画面に何か表示されるか確認してください。",
       },
       {
         role: "assistant",
         content:
-          "いつもお世話になっております。私のパソコンが動かなくなってしまいました。昨日までは問題なく使用できておりましたが、今日の14時から突然動かなくなってしまいました。電源ボタンを長押ししても反応がない状態です。どうぞ、ご確認の程よろしくお願いいたします。",
+        "お問い合わせありがとうございます。はじめに電源ケーブルが接続されていることを確認してください。次にパソコンの電源を入れ、パソコンの電源ランプが点灯するかどうかを確認してください。電源ランプが点灯したら、画面に何か表示されるか確認してください。",
       },
       {
         role: "user",
         content:
-          "以下の条件から、お問合せの文章を考えてください。丁寧な言葉を使うように表現を修正してください。" +
-          message,
+        "以下の条件から、お問合せの文章を考えてください。丁寧な言葉を使うように表現を修正してください。" +
+        message,
       },
     ];
-  }
-
-  private supportMessages(message: string): ChatCompletionRequestMessage[] {
-    return [];
   }
 }
